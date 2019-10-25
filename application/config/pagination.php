@@ -1,7 +1,7 @@
 <?php 
 
 // config
-$config['base_url'] = 'http://localhost/dokter2/peoples/index';
+$config['base_url'] = 'http://localhost/bdokter2/peoples/index';
 $config['num_links'] = 5;
 
 // styling
