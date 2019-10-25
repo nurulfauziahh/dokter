@@ -1,23 +1,25 @@
 <?php 
 
 class Peoples extends CI_Controller {
-	public function index() { 
 
+	public function index() 
+	{ 
 
 	$data['judul'] = "List of Peoples";
 
 	$this->load->model('Peoples_model', 'peoples');
 
-	// load library
+	//load library
 	$this->load->library('pagination');
 
-	// ambil data keyword
+	//ambil data keyword
 	if ($this->input->post('submit')) {
 		$data['keyword'] = $this->input->post('keyword');
 		$this->session->set_userdata('keyword', $data['keyword']);
 	} else {
 		$data['keyword'] = $this->session->userdata('keyword');
 	}
+
 
 	//config
 	$this->db->like('name', $data['keyword']);
@@ -29,9 +31,9 @@ class Peoples extends CI_Controller {
 
 	// initialize
 	$this->pagination->initialize($config);
-
 	$data ['start'] = $this->uri->segment(3);
 	$data['peoples'] = $this->peoples->getPeoples($config['per_page'], $data['start'], $data['keyword']);
+
 
 	$this->load->view('templates/header', $data);
 	$this->load->view('peoples/index', $data);
@@ -40,4 +42,4 @@ class Peoples extends CI_Controller {
 }
 }
 
- ?>
+ 

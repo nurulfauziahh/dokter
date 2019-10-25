@@ -2,7 +2,8 @@
 
 class Peoples_model extends CI_Model {
 
-	public function getAllPeoples() {
+	public function getAllPeoples() 
+	{
 		return $this->db->get('peoples')->result_array();
 	}
 
@@ -17,11 +18,7 @@ class Peoples_model extends CI_Model {
 
 	public function countAllPeoples()
 	{
-		return $this->db->get('peoples')->num_rows();
+		return $this->db->get('peoples')->num_rows();	
 	}
-
 }
 
-
-
- ?>
